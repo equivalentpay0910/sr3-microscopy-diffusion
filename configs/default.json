@@ -1,0 +1,7 @@
+{
+  "data": {"hr_dir": "data/hr", "lr_dir": "", "channels": 1, "scale": 4, "patch_size": 128},
+  "model": {"base_channels": 64, "channel_mults": [1, 2, 4, 8], "num_res_blocks": 2, "attn_levels": [3]},
+  "diffusion": {"timesteps": 2000, "beta_start": 1e-6, "beta_end": 0.01, "loss": "l1"},
+  "train": {"out_dir": "runs/exp1", "batch_size": 16, "lr": 1e-4, "warmup_steps": 10000, "total_steps": 500000},
+  "sample": {"steps": 100, "beta_start": 1e-4, "beta_end": 0.1, "method": "ddpm"}
+}

@@ -1,0 +1,20 @@
+{
+  "data": {
+    "hr_dir": "biosr_dataset/BioSR/Microtubules/training_gt",
+    "lr_dir": "biosr_dataset/BioSR/Microtubules/training_wf",
+    "val_hr_dir": "biosr_dataset/BioSR/Microtubules/validate_gt",
+    "val_lr_dir": "biosr_dataset/BioSR/Microtubules/validate_wf",
+    "lr_upsampled": true,
+    "scale": 2,
+    "patch_size": 128,
+    "p_low": 0.0,
+    "p_high": 100.0,
+    "max_files": 0,
+    "samples_per_epoch": 41040
+  },
+  "model": {"base_channels": 64, "channel_mults": [1, 2, 4, 8], "num_res_blocks": 2, "attn_levels": [3]},
+  "diffusion": {"timesteps": 2000, "beta_start": 1e-6, "beta_end": 0.01, "loss": "l1", "residual": true},
+  "train": {"out_dir": "runs/biosr", "batch_size": 16, "lr": 1e-4, "warmup_steps": 5000, "total_steps": 200000,
+            "num_workers": 2, "log_every": 200, "sample_every": 5000, "ckpt_every": 5000},
+  "sample": {"steps": 100, "beta_start": 1e-4, "beta_end": 0.1, "method": "ddpm"}
+}

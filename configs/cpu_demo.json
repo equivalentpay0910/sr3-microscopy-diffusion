@@ -1,0 +1,35 @@
+{
+  "data": {
+    "hr_dir": "data/synthetic",
+    "scale": 4,
+    "patch_size": 64,
+    "samples_per_epoch": 4000
+  },
+  "model": {
+    "base_channels": 16,
+    "channel_mults": [
+      1,
+      2,
+      2
+    ],
+    "num_res_blocks": 1,
+    "attn_levels": [
+      2
+    ]
+  },
+  "train": {
+    "out_dir": "runs/cpu_demo",
+    "batch_size": 4,
+    "lr": 0.0003,
+    "warmup_steps": 200,
+    "total_steps": 4000,
+    "num_workers": 0,
+    "log_every": 500,
+    "sample_every": 4000,
+    "ckpt_every": 4000,
+    "ema_decay": 0.999
+  },
+  "sample": {
+    "steps": 50
+  }
+}
